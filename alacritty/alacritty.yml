@@ -1,0 +1,61 @@
+colors:
+  name: TokyoNight Night
+  author: Folke
+  # Default colors
+  primary:
+    background: '0x1a1b26'
+    foreground: '0xc0caf5'
+
+  # Normal colors
+  normal:
+    black: '0x15161E'
+    red: '0xf7768e'
+    green: '0x9ece6a'
+    yellow: '0xe0af68'
+    blue: '0x7aa2f7'
+    magenta: '0xbb9af7'
+    cyan: '0x7dcfff'
+    white: '0xa9b1d6'
+
+  # Bright colors
+  bright:
+    black: '0x414868'
+    red: '0xf7768e'
+    green: '0x9ece6a'
+    yellow: '0xe0af68'
+    blue: '0x7aa2f7'
+    magenta: '0xbb9af7'
+    cyan: '0x7dcfff'
+    white: '0xc0caf5'
+
+  indexed_colors:
+    - { index: 16, color: '0xff9e64' }
+    - { index: 17, color: '0xdb4b4b' }
+font:
+  normal:
+    # family: Hack Nerd Font Mono
+    # family: Fira Code
+    family: MesloLGS NF
+  size: 13
+window:
+  decorations: none
+  padding:
+    x: 10
+    y: 10
+
+background_opacity: 1 #0.95
+theme: Tokyonight Night
+
+alt_send_esc: false
+key bindings:
+  - { key: Equals, mods: Command, action: DecreaseFontSize }
+  - { key: Slash, mods: Command, action: IncreaseFontSize }
+  - { key: A, mods: Command, action: Quit }
+  - { key: Z, mods: Command, action: Quit }
+  - { key: L, mods: Alt|Shift, chars: "|" }
+  - { key: Key5, mods: Alt, chars: "{" }
+  - { key: Minus, mods: Alt, chars: "}" }
+  - { key: Key5, mods: Alt|Shift, chars: "[" }
+  - { key: Minus, mods: Alt|Shift, chars: "]" }
+  - { key: N, mods: Alt, chars: "~" }
+  - { key: Period, mods: Alt|Shift, chars: "\\" }
