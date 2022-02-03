@@ -78,9 +78,10 @@ shift + alt - space : \
 
 # Restart Yabai
 shift + lctrl + alt - r : \
-    /usr/bin/env osascript <<< \
-        "display notification \"Restarting Yabai\" with title \"Yabai\""; \
-    launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
+		brew services restart yabai
+    # /usr/bin/env osascript <<< \
+    #     "display notification \"Restarting Yabai\" with title \"Yabai\""; \
+    # launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 
 # Make window native fullscreen
 alt - f         : yabai -m window --toggle zoom-fullscreen

@@ -54,6 +54,8 @@ vim.api.nvim_command("autocmd BufWritePre *.tsx lua vim.lsp.buf.formatting_sync(
 -- Insert --
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
+keymap("v", "jk", "<ESC>", opts)
+
 
 -- Visual --
 -- Stay in indent mode

@@ -43,7 +43,7 @@ window:
     x: 10
     y: 10
 
-background_opacity: 1 #0.95
+background_opacity: 1 
 theme: Tokyonight Night
 
 alt_send_esc: false
