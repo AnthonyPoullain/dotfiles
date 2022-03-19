@@ -98,6 +98,9 @@ local mappings = {
   ["v"] = { "<cmd>vertical split<CR>", "Vertical buffer" },
   ["n"] = { "<cmd>split<CR>", "Horizontal buffer" },
 
+  ["ta"] = { "<cmd>ToggleAlternate<CR>", "Toggle alternate value" },
+
+
   p = {
     name = "Packer",
     c = { "<cmd>PackerCompile<cr>", "Compile" },

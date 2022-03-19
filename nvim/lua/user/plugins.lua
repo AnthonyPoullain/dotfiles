@@ -103,6 +103,13 @@ return packer.startup(function(use)
 	-- tagbar
 	use "preservim/tagbar"	
 
+	-- DAP install
+	use "Pocco81/DAPInstall.nvim"
+
+	-- Bolean toggler
+	use "rmagatti/alternate-toggler"
+
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

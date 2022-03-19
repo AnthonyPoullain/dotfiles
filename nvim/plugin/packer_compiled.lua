@@ -74,6 +74,11 @@ _G.packer_plugins = {
     path = "/Users/tony/.local/share/nvim/site/pack/packer/start/Comment.nvim",
     url = "https://github.com/numToStr/Comment.nvim"
   },
+  ["DAPInstall.nvim"] = {
+    loaded = true,
+    path = "/Users/tony/.local/share/nvim/site/pack/packer/start/DAPInstall.nvim",
+    url = "https://github.com/Pocco81/DAPInstall.nvim"
+  },
   ["FixCursorHold.nvim"] = {
     loaded = true,
     path = "/Users/tony/.local/share/nvim/site/pack/packer/start/FixCursorHold.nvim",
@@ -88,6 +93,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/tony/.local/share/nvim/site/pack/packer/start/alpha-nvim",
     url = "https://github.com/goolord/alpha-nvim"
+  },
+  ["alternate-toggler"] = {
+    loaded = true,
+    path = "/Users/tony/.local/share/nvim/site/pack/packer/start/alternate-toggler",
+    url = "https://github.com/rmagatti/alternate-toggler"
   },
   ["bufferline.nvim"] = {
     loaded = true,
@@ -262,5 +272,6 @@ if should_profile then save_profiles() end
 end)
 
 if not no_errors then
+  error_msg = error_msg:gsub('"', '\\"')
   vim.api.nvim_command('echohl ErrorMsg | echom "Error in packer_compiled: '..error_msg..'" | echom "Please check your config for correctness" | echohl None')
 end
