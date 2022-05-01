@@ -44,7 +44,7 @@ vim.api.nvim_command("autocmd BufWritePre *.html lua vim.lsp.buf.formatting_seq_
 vim.api.nvim_command("autocmd BufWritePre *.css lua vim.lsp.buf.formatting_seq_sync(nil, 1000)")
 vim.api.nvim_command("autocmd BufWritePre *.scss lua vim.lsp.buf.formatting_seq_sync(nil, 1000)")
 vim.api.nvim_command("autocmd BufWritePre *.js lua vim.lsp.buf.formatting_seq_sync(nil, 1000)")
-vim.api.nvim_command("autocmd BufWritePre *.js EslintFixAll")
+-- vim.api.nvim_command("autocmd BufWritePre *.js EslintFixAll")
 -- autocmd BufWritePre <buffer> <cmd>EslintFixAll<CR>
 vim.api.nvim_command("autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_seq_sync(nil, 1000)")
 vim.api.nvim_command("autocmd BufWritePre *.ts lua vim.lsp.buf.formatting_seq_sync(nil, 1000)")

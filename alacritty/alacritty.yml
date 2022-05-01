@@ -63,10 +63,25 @@ colors:
 
 font:
   normal:
-    # family: Hack Nerd Font Mono
+    family: Hack Nerd Font Mono
     # family: Fira Code
-    family: MesloLGS NF
+    # family: MesloLGS NF
+    # family: Menlo
+  # bold:
+  #   family: Hack Nerd Font Mono
+  #   style: Bold
+  #
+  # italic:
+  #   family: Cascadia Code
+  #   style: Italic
+  #
+  # bold_italic:
+  #   family: Cascadia Code
+  #   style: Bold Italic
+  #
   size: 13
+  offset:
+    y: 5 
 window:
   decorations: none
   padding:

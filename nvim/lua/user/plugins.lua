@@ -99,16 +99,15 @@ return packer.startup(function(use)
 
 	-- css color
 	use "ap/vim-css-color"
-	 
+
 	-- tagbar
 	use "preservim/tagbar"	
-
-	-- DAP install
-	use "Pocco81/DAPInstall.nvim"
 
 	-- Bolean toggler
 	use "rmagatti/alternate-toggler"
 
+	-- kitty config highlighting
+	use "fladson/vim-kitty"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
