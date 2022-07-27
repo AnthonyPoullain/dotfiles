@@ -9,15 +9,15 @@ yabai -m config window_shadow                off
 yabai -m config window_opacity               off
 yabai -m config window_opacity_duration      0.0
 yabai -m config active_window_opacity        1.0
-yabai -m config normal_window_opacity        0.9
+yabai -m config normal_window_opacity		 0.9        
 yabai -m config window_border                on
-yabai -m config window_border_width          6
-yabai -m config active_window_border_color   0xff29A9B7
-yabai -m config normal_window_border_color   0xff003D4F
+yabai -m config window_border_width          5
+yabai -m config active_window_border_color   0xff82AAFF
+# yabai -m config normal_window_border_color   0xff202020
 yabai -m config insert_feedback_color        0xffd75f5f
 yabai -m config split_ratio                  0.50
 yabai -m config auto_balance                 off
-#yabai -m config mouse_modifier               cmd
+#yabai -m config mouse_modifier              cmd
 yabai -m config mouse_action1                move
 yabai -m config mouse_action2                resize
 yabai -m config mouse_drop_action            swap

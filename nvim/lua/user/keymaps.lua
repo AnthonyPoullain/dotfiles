@@ -49,6 +49,7 @@ vim.api.nvim_command("autocmd BufWritePre *.js lua vim.lsp.buf.formatting_seq_sy
 vim.api.nvim_command("autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_seq_sync(nil, 1000)")
 vim.api.nvim_command("autocmd BufWritePre *.ts lua vim.lsp.buf.formatting_seq_sync(nil, 1000)")
 vim.api.nvim_command("autocmd BufWritePre *.tsx lua vim.lsp.buf.formatting_seq_sync(nil, 1000)")
+vim.api.nvim_command("autocmd BufWritePre *.lua lua vim.lsp.buf.formatting_seq_sync(nil, 1000)")
 
 
 

@@ -1,95 +1,77 @@
-# Colors (Tokyo Night: Storm variant)
-# Source: https://github.com/zatchheems/tokyo-night-alacritty-theme
-# colors:
-#   name: TokyoNight Night
-#   author: Folke
-#   # Default colors
-#   primary:
-#     background: '0x1a1b26'
-#     foreground: '0xc0caf5'
-#
-#   # Normal colors
-#   normal:
-#     black: '0x15161E'
-#     red: '0xf7768e'
-#     green: '0x9ece6a'
-#     yellow: '0xe0af68'
-#     blue: '0x7aa2f7'
-#     magenta: '0xbb9af7'
-#     cyan: '0x7dcfff'
-#     white: '0xa9b1d6'
-#
-#   # Bright colors
-#   bright:
-#     black: '0x414868'
-#     red: '0xf7768e'
-#     green: '0x9ece6a'
-#     yellow: '0xe0af68'
-#     blue: '0x7aa2f7'
-#     magenta: '0xbb9af7'
-#     cyan: '0x7dcfff'
-#     white: '0xc0caf5'
-#
-#   indexed_colors:
-#     - { index: 16, color: '0xff9e64' }
-#     - { index: 17, color: '0xdb4b4b' }
 colors:
   # Default colors
   primary:
-    background: '0x24283b'
-    foreground: '0xa9b1d6'
+    background: '#292D3E'
+    foreground: '#eeffff'
 
   # Normal colors
   normal:
-    black:   '0x32344a'
-    red:     '0xf7768e'
-    green:   '0x9ece6a'
-    yellow:  '0xe0af68'
-    blue:    '0x7aa2f7'
-    magenta: '0xad8ee6'
-    cyan:    '0x449dab'
-    white:   '0x9699a8'
+    black: '#000000' # Arbitrary
+    red: '#e53935'
+    green: '#91b859'
+    yellow: '#ffb62c'
+    blue: '#6182b8'
+    magenta: '#ff5370' # Dark pink of the original material theme
+    cyan: '#39adb5'
+    white: '#a0a0a0' # Arbitrary
 
   # Bright colors
   bright:
-    black:   '0x444b6a'
-    red:     '0xff7a93'
-    green:   '0xb9f27c'
-    yellow:  '0xff9e64'
-    blue:    '0x7da6ff'
-    magenta: '0xbb9af7'
-    cyan:    '0x0db9d7'
-    white:   '0xacb0d0'
+    black: '#4e4e4e' # Arbitrary
+    red: '#ff5370'
+    green: '#c3e88d'
+    yellow: '#ffcb6b'
+    blue: '#82aaff'
+    magenta: '#f07178' # Pink of the original material theme
+    cyan: '#89ddff'
+    white: '#ffffff' # Arbitrary
 
 font:
   normal:
-    family: Hack Nerd Font Mono
-    # family: Fira Code
-    # family: MesloLGS NF
+    # family: Ubuntu Mono
+    # style: regular
+    # family: Fira Code iScript
+    family: MesloLGS NF
+    # family: Hack Nerd Font Mono
+    # family: JetBrains Mono Medium
     # family: Menlo
-  # bold:
-  #   family: Hack Nerd Font Mono
-  #   style: Bold
-  #
+    # family: FuraCode Nerd Font Mono
+    # family: UbuntuMono Nerd Font Mono
+    # family: JetBrainsMono Nerd Font Mono
+    # family: CaskaydiaCove Nerd Font Mono
+    # style: Thin
+    # bold:
+    #   style: Bold
+    # #
   # italic:
   #   family: Cascadia Code
+  #   # family: MesloLGS NF
   #   style: Italic
-  #
+  # #
   # bold_italic:
-  #   family: Cascadia Code
+  #   family: MesloLGS NF
   #   style: Bold Italic
   #
   size: 13
   offset:
-    y: 5 
+    y: 0
+
+cursor:
+  style:
+    shape: Block
+    blinking: never
+  blink_interval: 500
+  unfocused_hollow: true
+  thickness: 0.15
+
 window:
   decorations: none
   padding:
     x: 10
     y: 10
 
-background_opacity: 1 
-theme: Tokyonight Storm
+background_opacity: 1
+theme: Material-Theme
 
 alt_send_esc: false
 key bindings:
@@ -104,3 +86,8 @@ key bindings:
   - { key: Minus, mods: Alt|Shift, chars: "]" }
   - { key: N, mods: Alt, chars: "~" }
   - { key: Period, mods: Alt|Shift, chars: "\\" }
+
+  - { key: J,        mods: Alt,     chars: "\x1bj"                       }
+  - { key: K,        mods: Alt,     chars: "\x1bk"                       }
+  - { key: H,        mods: Alt,     chars: "\x1bh"                       }
+  - { key: L,        mods: Alt,     chars: "\x1bl"                       }
