@@ -1,21 +1,54 @@
--- vim.cmd [[
--- try
---   colorscheme darkplus
--- catch /^Vim\%((\a\+)\)\=:E185/
---   colorscheme default
---   set background=dark
--- endtry
--- ]]
+-- There are 5 different styles available:
+-- darker
+-- lighter
+-- oceanic
+-- palenight
+-- deep ocean
+vim.g.material_style = "palenight"
+require('material').setup({
 
--- Example config in Lua
-vim.g.tokyonight_style = "storm"
-vim.g.tokyonight_italic_functions = true
-vim.g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
+	contrast = {
+		sidebars = false, -- Enable contrast for sidebar-like windows ( for example Nvim-Tree )
+		floating_windows = false, -- Enable contrast for floating windows
+		line_numbers = false, -- Enable contrast background for line numbers
+		sign_column = false, -- Enable contrast background for the sign column
+		cursor_line = false, -- Enable darker background for the cursor line
+		non_current_windows = false, -- Enable darker background for non-current windows
+		popup_menu = false, -- Enable lighter background for the popup menu
+	},
 
--- Change the "hint" color to the "orange" color, and make the "error" color bright red
-vim.g.tokyonight_colors = { hint = "orange", error = "#ff0000" }
+	italics = {
+		comments = true, -- Enable italic comments
+		keywords = false, -- Enable italic keywords
+		functions = false, -- Enable italic functions
+		strings = true, -- Enable italic strings
+		variables = false -- Enable italic variables
+	},
 
--- Load the colorscheme
-vim.cmd[[colorscheme tokyonight]]
+	contrast_filetypes = { -- Specify which filetypes get the contrasted (darker) background
+		-- "terminal", -- Darker terminal background
+		"packer", -- Darker packer background
+		"qf" -- Darker qf list background
+	},
 
--- require('nightfox').load("nightfox")
+	high_visibility = {
+		lighter = false, -- Enable higher contrast text for lighter style
+		darker = false -- Enable higher contrast text for darker style
+	},
+
+	disable = {
+		colored_cursor = false, -- Disable the colored cursor
+		borders = true, -- Disable borders between verticaly split windows
+		background = false, -- Prevent the theme from setting the background (NeoVim then uses your teminal background)
+		term_colors = true, -- Prevent the theme from setting terminal colors
+		eob_lines = false -- Hide the end-of-buffer lines
+	},
+
+	lualine_style = "stealth", -- Lualine style ( can be 'stealth' or 'default' )
+
+	async_loading = true, -- Load parts of the theme asyncronously for faster startup (turned on by default)
+
+	custom_highlights = {} -- Overwrite highlights with your own
+})
+
+vim.cmd [[colorscheme material]]
