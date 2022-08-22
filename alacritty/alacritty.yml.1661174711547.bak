@@ -1,46 +1,45 @@
 colors:
   # Default colors
   primary:
-    background: '#282c34'
-    foreground: '#abb2bf'
+    # hard contrast: background = '#1d2021'
+    background: '#282828'
+    # soft contrast: background = '#32302f'
+    foreground: '#ebdbb2'
 
   # Normal colors
   normal:
-    # NOTE: Use '#131613' for the `black` color if you'd like to see
-    # black text on the background.
-    black: '#282c34'
-    red: '#e06c75'
-    green: '#98c379'
-    yellow: '#d19a66'
-    blue: '#61afef'
-    magenta: '#c678dd'
-    cyan: '#56b6c2'
-    white: '#abb2bf'
+    black: '#282828'
+    red: '#cc241d'
+    green: '#98971a'
+    yellow: '#d79921'
+    blue: '#458588'
+    magenta: '#b16286'
+    cyan: '#689d6a'
+    white: '#a89984'
 
   # Bright colors
   bright:
-    black: '#5c6370'
-    red: '#e06c75'
-    green: '#98c379'
-    yellow: '#d19a66'
-    blue: '#61afef'
-    magenta: '#c678dd'
-    cyan: '#56b6c2'
-    white: '#ffffff'
+    black: '#928374'
+    red: '#fb4934'
+    green: '#b8bb26'
+    yellow: '#fabd2f'
+    blue: '#83a598'
+    magenta: '#d3869b'
+    cyan: '#8ec07c'
+    white: '#ebdbb2'
 
 font:
   normal:
-    # family: Cascadia code
     # family: Ubuntu Mono
     # style: regular
     # family: Fira Code iScript
-    # family: MesloLGS NF
+    family: MesloLGS NF
     # family: Hack Nerd Font Mono
     # family: JetBrains Mono Medium
     # family: Menlo
     # family: FuraCode Nerd Font Mono
     # family: UbuntuMono Nerd Font Mono
-    family: JetBrainsMono Nerd Font Mono
+    # family: JetBrainsMono Nerd Font Mono
     # family: CaskaydiaCove Nerd Font Mono
     # style: Thin
     # bold:
@@ -55,14 +54,14 @@ font:
   #   family: MesloLGS NF
   #   style: Bold Italic
   #
-  size: 12
+  size: 13
   offset:
-    y: 10 
+    y: 0
 
 cursor:
   style:
     shape: Block
-    blinking: always
+    blinking: never
   blink_interval: 500
   unfocused_hollow: true
   thickness: 0.15
@@ -74,7 +73,7 @@ window:
     y: 10
 
 window.opacity: 1
-theme: One-Dark
+theme: Gruvbox-Dark
 
 alt_send_esc: false
 key bindings:
