@@ -43,9 +43,11 @@ vim.api.nvim_command("autocmd BufWritePre *.py lua vim.lsp.buf.formatting_seq_sy
 vim.api.nvim_command("autocmd BufWritePre *.html lua vim.lsp.buf.formatting_seq_sync(nil, 1000)")
 vim.api.nvim_command("autocmd BufWritePre *.css lua vim.lsp.buf.formatting_seq_sync(nil, 1000)")
 vim.api.nvim_command("autocmd BufWritePre *.scss lua vim.lsp.buf.formatting_seq_sync(nil, 1000)")
+--[[ vim.api.nvim_command("autocmd BufWritePre *.js EslintFixAll") ]]
 vim.api.nvim_command("autocmd BufWritePre *.js lua vim.lsp.buf.formatting_seq_sync(nil, 1000)")
--- vim.api.nvim_command("autocmd BufWritePre *.js EslintFixAll")
--- autocmd BufWritePre <buffer> <cmd>EslintFixAll<CR>
+--[[ vim.api.nvim_command("autocmd BufWritePre *.js lua vim.lsp.buf.formatting()") ]]
+
+--[[ -- autocmd BufWritePre <buffer> <cmd>EslintFixAll<CR> ]]
 vim.api.nvim_command("autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_seq_sync(nil, 1000)")
 vim.api.nvim_command("autocmd BufWritePre *.ts lua vim.lsp.buf.formatting_seq_sync(nil, 1000)")
 vim.api.nvim_command("autocmd BufWritePre *.tsx lua vim.lsp.buf.formatting_seq_sync(nil, 1000)")
@@ -82,4 +84,3 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 -- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
-

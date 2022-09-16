@@ -80,13 +80,15 @@ local opts = {
 
 local mappings = {
 	["a"] = { "<cmd>Alpha<cr>", "Alpha" },
-	-- ["b"] = {
-	--   "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-	--   "Buffers",
-	-- },
+	["d"] = { "<cmd>lua require('neogen').generate()<cr>", "Generate docs" },
+	["b"] = {
+		"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+		"Buffers",
+	},
+
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 	["w"] = { "<cmd>w!<CR>", "Save" },
-	["q"] = { "<cmd>q!<CR>", "Quit" },
+	--[[ ["q"] = { "<cmd>q!<CR>", "Quit" }, ]]
 	["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
 	["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
 	["f"] = {
@@ -100,7 +102,7 @@ local mappings = {
 
 	["ta"] = { "<cmd>ToggleAlternate<CR>", "Toggle alternate value" },
 	["ts"] = { "<cmd>Gitsigns toggle_signs<CR>", "Toggle git signs" },
-
+	["q"] = { "<cmd>TroubleToggle document_diagnostics<CR>", "Toggle Trouble" },
 
 	p = {
 		name = "Packer",
@@ -186,6 +188,14 @@ local mappings = {
 		f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
 		h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
 		v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
+	},
+
+	T = {
+		name = "Tests (Neotest)",
+		t = { "<cmd>lua require('neotest').run.run()<cr>", "Test nearest" },
+		T = { "<cmd>lua require('neotest').run.run()<cr>", "Test file" },
+		o = { "<cmd>lua require('neotest').output.open()<cr>", "Toggle output preview" },
+		s = { "<cmd>lua require('neotest').summary.toggle()<cr>", "Toggle summary" },
 	},
 }
 
