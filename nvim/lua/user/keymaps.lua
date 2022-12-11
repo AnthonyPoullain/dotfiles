@@ -39,27 +39,26 @@ keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
 -- format on save
-vim.api.nvim_command("autocmd BufWritePre *.py lua vim.lsp.buf.formatting_seq_sync(nil, 1000)")
-vim.api.nvim_command("autocmd BufWritePre *.html lua vim.lsp.buf.formatting_seq_sync(nil, 1000)")
-vim.api.nvim_command("autocmd BufWritePre *.css lua vim.lsp.buf.formatting_seq_sync(nil, 1000)")
-vim.api.nvim_command("autocmd BufWritePre *.scss lua vim.lsp.buf.formatting_seq_sync(nil, 1000)")
+vim.api.nvim_command("autocmd BufWritePre *.py lua vim.lsp.buf.format(nil, 1000)")
+vim.api.nvim_command("autocmd BufWritePre *.html lua vim.lsp.buf.format(nil, 1000)")
+vim.api.nvim_command("autocmd BufWritePre *.css lua vim.lsp.buf.format(nil, 1000)")
+vim.api.nvim_command("autocmd BufWritePre *.scss lua vim.lsp.buf.format(nil, 1000)")
 --[[ vim.api.nvim_command("autocmd BufWritePre *.js EslintFixAll") ]]
-vim.api.nvim_command("autocmd BufWritePre *.js lua vim.lsp.buf.formatting_seq_sync(nil, 1000)")
+vim.api.nvim_command("autocmd BufWritePre *.js lua vim.lsp.buf.format(nil, 1000)")
 --[[ vim.api.nvim_command("autocmd BufWritePre *.js lua vim.lsp.buf.formatting()") ]]
 
 --[[ -- autocmd BufWritePre <buffer> <cmd>EslintFixAll<CR> ]]
-vim.api.nvim_command("autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_seq_sync(nil, 1000)")
-vim.api.nvim_command("autocmd BufWritePre *.ts lua vim.lsp.buf.formatting_seq_sync(nil, 1000)")
-vim.api.nvim_command("autocmd BufWritePre *.tsx lua vim.lsp.buf.formatting_seq_sync(nil, 1000)")
-vim.api.nvim_command("autocmd BufWritePre *.lua lua vim.lsp.buf.formatting_seq_sync(nil, 1000)")
-
-
+vim.api.nvim_command("autocmd BufWritePre *.jsx lua vim.lsp.buf.format(nil, 1000)")
+vim.api.nvim_command("autocmd BufWritePre *.ts lua vim.lsp.buf.format(nil, 1000)")
+vim.api.nvim_command("autocmd BufWritePre *.tsx lua vim.lsp.buf.format(nil, 1000)")
+vim.api.nvim_command("autocmd BufWritePre *.lua lua vim.lsp.buf.format(nil, 1000)")
+vim.api.nvim_command("autocmd BufWritePre *.json lua vim.lsp.buf.format(nil, 1000)")
+vim.api.nvim_command("autocmd BufWritePre *.yaml lua vim.lsp.buf.format(nil, 1000)")
 
 -- Insert --
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
 keymap("v", "jk", "<ESC>", opts)
-
 
 -- Visual --
 -- Stay in indent mode

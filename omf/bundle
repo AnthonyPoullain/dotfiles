@@ -1,3 +1,6 @@
+package foreign-env
+package lucky
+package nvm
 package vcs
 theme agnoster
 theme aight
@@ -8,3 +11,4 @@ theme default
 theme emoji-powerline
 theme fox
 theme mars
+theme one

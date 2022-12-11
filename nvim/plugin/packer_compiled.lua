@@ -124,11 +124,6 @@ _G.packer_plugins = {
     path = "/Users/tony/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
-  ["cmp-tabnine"] = {
-    loaded = true,
-    path = "/Users/tony/.local/share/nvim/site/pack/packer/start/cmp-tabnine",
-    url = "https://github.com/tzachar/cmp-tabnine"
-  },
   cmp_luasnip = {
     loaded = true,
     path = "/Users/tony/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
@@ -153,6 +148,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/tony/.local/share/nvim/site/pack/packer/start/impatient.nvim",
     url = "https://github.com/lewis6991/impatient.nvim"
+  },
+  ["lspsaga.nvim"] = {
+    config = { "\27LJ\2\n’\b\0\0\6\0\28\0!6\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\3\0005\4\4\0=\4\5\0035\4\6\0=\4\a\0035\4\b\0=\4\t\0035\4\n\0=\4\v\0035\4\r\0005\5\f\0=\5\14\0045\5\15\0=\5\16\4=\4\17\0035\4\18\0=\4\19\0035\4\20\0=\4\21\0035\4\22\0=\4\23\0035\4\24\0=\4\25\0034\4\0\0=\4\26\0034\4\0\0=\4\27\3B\1\2\1K\0\1\0\24server_filetype_map\16custom_kind\17show_outline\1\0\b\17win_position\nright\14win_width\3\30\17auto_refresh\2\14virt_text\bâ”ƒ\15auto_enter\2\rwin_with\5\rjump_key\6o\17auto_preview\2\21symbol_in_winbar\1\0\6\venable\2\14in_custom\1\19file_formatter\5\18click_support\1\14separator\tï‘Š \14show_file\2\27definition_action_keys\1\0\5\nsplit\v<C-c>i\tedit\v<C-c>o\tquit\6q\ttabe\v<C-c>t\vvsplit\v<C-c>v\21code_action_keys\1\0\2\texec\t<CR>\tquit\6q\23finder_action_keys\tquit\1\3\0\0\6q\n<ESC>\topen\1\0\3\nsplit\6i\ttabe\6t\vvsplit\6s\1\3\0\0\6o\t<CR>\17finder_icons\1\0\3\bdef\nîˆ•  \bref\tïª¾ \tlink\nï ¸  \26code_action_lightbulb\1\0\a\16update_time\3–\1\venable\2\22cache_code_action\2\21enable_in_insert\2\18sign_priority\3\20\17virtual_text\2\tsign\2\22diagnostic_header\1\5\0\0\tï— \tïª \tïš \tï´ \17move_in_saga\1\0\2\tprev\n<C-p>\tnext\n<C-n>\1\0\b\27finder_request_timeout\3Ü\v\29code_action_num_shortcut\2\21code_action_icon\tğŸ’¡\22max_preview_lines\3\n\18saga_winblend\3\0\17border_style\vsingle\21rename_in_select\2\23rename_action_quit\n<C-c>\18init_lsp_saga\flspsaga\frequire\0" },
+    loaded = true,
+    path = "/Users/tony/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
+    url = "https://github.com/glepnir/lspsaga.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
@@ -267,6 +268,11 @@ _G.packer_plugins = {
     path = "/Users/tony/.local/share/nvim/site/pack/packer/start/onedark.nvim",
     url = "https://github.com/navarasu/onedark.nvim"
   },
+  ["oxocarbon.nvim"] = {
+    loaded = true,
+    path = "/Users/tony/.local/share/nvim/site/pack/packer/start/oxocarbon.nvim",
+    url = "https://github.com/shaunsingh/oxocarbon.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/tony/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -323,6 +329,16 @@ _G.packer_plugins = {
     path = "/Users/tony/.local/share/nvim/site/pack/packer/start/vim-css-color",
     url = "https://github.com/ap/vim-css-color"
   },
+  ["vim-doge"] = {
+    loaded = true,
+    path = "/Users/tony/.local/share/nvim/site/pack/packer/start/vim-doge",
+    url = "https://github.com/kkoomen/vim-doge"
+  },
+  ["vim-styled-components"] = {
+    loaded = true,
+    path = "/Users/tony/.local/share/nvim/site/pack/packer/start/vim-styled-components",
+    url = "https://github.com/styled-components/vim-styled-components"
+  },
   ["which-key.nvim"] = {
     loaded = true,
     path = "/Users/tony/.local/share/nvim/site/pack/packer/start/which-key.nvim",
@@ -339,14 +355,18 @@ time([[Config for nvim-surround]], false)
 time([[Config for neogen]], true)
 try_loadstring("\27LJ\2\nR\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\19snippet_engine\fluasnip\nsetup\vneogen\frequire\0", "config", "neogen")
 time([[Config for neogen]], false)
--- Config for: neotest
-time([[Config for neotest]], true)
-try_loadstring("\27LJ\2\n%\0\0\2\0\3\0\0046\0\0\0009\0\1\0009\0\2\0D\0\1\0\vgetcwd\afn\bvimØ\1\1\0\b\0\v\1\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\t\0004\3\3\0006\4\0\0'\6\3\0B\4\2\0025\6\4\0005\a\5\0=\a\6\0063\a\a\0=\a\b\6B\4\2\0?\4\0\0=\3\n\2B\0\2\1K\0\1\0\radapters\1\0\0\bcwd\0\benv\1\0\1\aCI\2\1\0\2\19jestConfigFile\26custom.jest.config.ts\16jestCommand\16npm test --\17neotest-jest\nsetup\fneotest\frequire\3€€À™\4\0", "config", "neotest")
-time([[Config for neotest]], false)
 -- Config for: trouble.nvim
 time([[Config for trouble.nvim]], true)
 try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\ftrouble\frequire\0", "config", "trouble.nvim")
 time([[Config for trouble.nvim]], false)
+-- Config for: neotest
+time([[Config for neotest]], true)
+try_loadstring("\27LJ\2\n%\0\0\2\0\3\0\0046\0\0\0009\0\1\0009\0\2\0D\0\1\0\vgetcwd\afn\bvimØ\1\1\0\b\0\v\1\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\t\0004\3\3\0006\4\0\0'\6\3\0B\4\2\0025\6\4\0005\a\5\0=\a\6\0063\a\a\0=\a\b\6B\4\2\0?\4\0\0=\3\n\2B\0\2\1K\0\1\0\radapters\1\0\0\bcwd\0\benv\1\0\1\aCI\2\1\0\2\19jestConfigFile\26custom.jest.config.ts\16jestCommand\16npm test --\17neotest-jest\nsetup\fneotest\frequire\3€€À™\4\0", "config", "neotest")
+time([[Config for neotest]], false)
+-- Config for: lspsaga.nvim
+time([[Config for lspsaga.nvim]], true)
+try_loadstring("\27LJ\2\n’\b\0\0\6\0\28\0!6\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\3\0005\4\4\0=\4\5\0035\4\6\0=\4\a\0035\4\b\0=\4\t\0035\4\n\0=\4\v\0035\4\r\0005\5\f\0=\5\14\0045\5\15\0=\5\16\4=\4\17\0035\4\18\0=\4\19\0035\4\20\0=\4\21\0035\4\22\0=\4\23\0035\4\24\0=\4\25\0034\4\0\0=\4\26\0034\4\0\0=\4\27\3B\1\2\1K\0\1\0\24server_filetype_map\16custom_kind\17show_outline\1\0\b\17win_position\nright\14win_width\3\30\17auto_refresh\2\14virt_text\bâ”ƒ\15auto_enter\2\rwin_with\5\rjump_key\6o\17auto_preview\2\21symbol_in_winbar\1\0\6\venable\2\14in_custom\1\19file_formatter\5\18click_support\1\14separator\tï‘Š \14show_file\2\27definition_action_keys\1\0\5\nsplit\v<C-c>i\tedit\v<C-c>o\tquit\6q\ttabe\v<C-c>t\vvsplit\v<C-c>v\21code_action_keys\1\0\2\texec\t<CR>\tquit\6q\23finder_action_keys\tquit\1\3\0\0\6q\n<ESC>\topen\1\0\3\nsplit\6i\ttabe\6t\vvsplit\6s\1\3\0\0\6o\t<CR>\17finder_icons\1\0\3\bdef\nîˆ•  \bref\tïª¾ \tlink\nï ¸  \26code_action_lightbulb\1\0\a\16update_time\3–\1\venable\2\22cache_code_action\2\21enable_in_insert\2\18sign_priority\3\20\17virtual_text\2\tsign\2\22diagnostic_header\1\5\0\0\tï— \tïª \tïš \tï´ \17move_in_saga\1\0\2\tprev\n<C-p>\tnext\n<C-n>\1\0\b\27finder_request_timeout\3Ü\v\29code_action_num_shortcut\2\21code_action_icon\tğŸ’¡\22max_preview_lines\3\n\18saga_winblend\3\0\17border_style\vsingle\21rename_in_select\2\23rename_action_quit\n<C-c>\18init_lsp_saga\flspsaga\frequire\0", "config", "lspsaga.nvim")
+time([[Config for lspsaga.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
