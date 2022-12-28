@@ -24,13 +24,3 @@ require("user.indentline")
 require("user.alpha")
 require("user.whichkey")
 require("user.autocommands")
-require("user.neoscroll")
-
---[[ local status_ok, _ = pcall(require, "lspconfig") ]]
---[[ if not status_ok then ]]
---[[ 	return ]]
---[[ end ]]
-
---[[ require("user.lsp.lsp-installer") ]]
---[[ require("user.lsp.handlers").setup() ]]
---[[ require("lspconfig").eslint.setup {} ]]

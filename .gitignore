@@ -2,6 +2,7 @@
 Wondershare*/
 MobileBackupForeverIni/
 yarn/
+*.tmp.*
 filezilla/
 
 fish/fish_variables

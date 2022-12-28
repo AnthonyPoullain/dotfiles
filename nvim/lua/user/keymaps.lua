@@ -19,10 +19,10 @@ vim.g.maplocalleader = " "
 
 -- Normal --
 -- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
+--[[ keymap("n", "<C-h>", "<C-w>h", opts) ]]
+--[[ keymap("n", "<C-j>", "<C-w>j", opts) ]]
+--[[ keymap("n", "<C-k>", "<C-w>k", opts) ]]
+--[[ keymap("n", "<C-l>", "<C-w>l", opts) ]]
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
@@ -37,6 +37,14 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 -- Move text up and down
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
+
+-- Better half page scrolling
+keymap("n", "<C-u>", "<C-u>zz", opts)
+keymap("n", "<C-d>", "<C-d>zz", opts)
+
+-- Better search page scrolling
+keymap("n", "n", "nzz", opts)
+keymap("n", "N", "Nzz", opts)
 
 -- format on save
 vim.api.nvim_command("autocmd BufWritePre *.py lua vim.lsp.buf.format(nil, 1000)")
@@ -76,6 +84,9 @@ keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+
+-- Search & replace word under cursor
+keymap("n", "<leader>o", ":%s/<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left><C-w>", opts)
 
 -- Terminal --
 -- Better terminal navigation

@@ -28,7 +28,7 @@ yabai -m config top_padding                  10 #44
 yabai -m config bottom_padding               10
 yabai -m config left_padding                 10
 yabai -m config right_padding                10
-yabai -m config window_gap                   10
+yabai -m config window_gap                   5
 
 yabai -m space 1 --label work
 yabai -m space 2 --label web

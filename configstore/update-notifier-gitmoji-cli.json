@@ -1,10 +1,4 @@
 {
 	"optOut": false,
-	"lastUpdateCheck": 1670756851023,
-	"update": {
-		"latest": "7.0.2",
-		"current": "6.2.0",
-		"type": "major",
-		"name": "gitmoji-cli"
-	}
+	"lastUpdateCheck": 1672234068533
 }

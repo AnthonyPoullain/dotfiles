@@ -15,10 +15,10 @@ require("onedark").setup({
 	-- You can configure multiple style with comma seperated, For e.g., keywords = 'italic,bold'
 	code_style = {
 		comments = "italic",
-		keywords = "none",
-		functions = "none",
+		keywords = "bold",
+		functions = "bold",
 		strings = "none",
-		variables = "none",
+		variables = "bold",
 	},
 
 	-- Custom Highlights --
@@ -32,7 +32,7 @@ require("onedark").setup({
 		background = true, -- use background color for virtual text
 	},
 })
-require("onedark").load()
+--[[ require("onedark").load() ]]
 
---[[ vim.cmd("colorscheme oxocarbon") ]]
---[[ vim.o.background = "dark" ]]
+require("oxocarbon")
+vim.cmd("colorscheme oxocarbon")
