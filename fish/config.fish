@@ -16,6 +16,7 @@
 if status --is-login
 		set -gx PATH "$HOME/.cargo/bin" $PATH;
 end
+
     # TokyoNight Color Palette
     # set -l foreground c0caf5
     # set -l selection 33467C

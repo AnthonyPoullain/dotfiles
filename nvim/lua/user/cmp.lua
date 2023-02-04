@@ -96,38 +96,55 @@ cmp.setup({
 	},
 	formatting = {
 		fields = { "abbr", "kind", "menu" },
+		--[[ fields = { "kind", "abbr", "menu" }, ]]
 		format = function(entry, vim_item)
+			vim_item.abbr = string.sub(vim_item.abbr, 1, 25)
 			-- Kind icons
-			vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-			--[[ vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind ]]
+			--[[ vim_item.kind = string.format("%s ", kind_icons[vim_item.kind]) ]]
+			vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+			--[[ vim_item.menu = ({ ]]
+			--[[ 	nvim_lsp = "[LSP]", ]]
+			--[[ 	luasnip = "[Snippet]", ]]
+			--[[ 	buffer = "[Buffer]", ]]
+			--[[ 	path = "[Path]", ]]
+			--[[ })[entry.source.name] ]]
 			vim_item.menu = ({
-				nvim_lsp = "[LSP]",
-				luasnip = "[Snippet]",
-				buffer = "[Buffer]",
-				path = "[Path]",
-				cmp_tabnine = "[TN]",
+				nvim_lsp = "",
+				nvim_lua = "",
+				treesitter = "",
+				path = "",
+				buffer = "",
+				zsh = "",
+				luasnip = "",
+				spell = "暈",
 			})[entry.source.name]
+
 			return vim_item
 		end,
 	},
 	sources = {
-		{ name = "nvim_lsp", keyword_length = 3 },
+		{ name = "nvim_lsp_signature_help" },
+		{ name = "nvim_lsp" },
+		--[[ { name = "treesitter" }, ]]
 		{ name = "luasnip" },
-		{ name = "buffer", keyword_length = 3 },
 		{ name = "path" },
-		--[[ { name = "cmp_tabnine" }, ]]
+		{ name = "buffer", keyword_length = 3 },
 	},
+
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
 		select = false,
 	},
 	window = {
-		documentation = {
-			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-		},
+		completion = cmp.config.window.bordered(),
+		documentation = cmp.config.window.bordered(),
+		--[[ documentation = { ]]
+		--[[ 	border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }, ]]
+		--[[]]
+		--[[ }, ]]
 	},
 	experimental = {
-		ghost_text = false,
+		ghost_text = true,
 		native_menu = false,
 	},
 })

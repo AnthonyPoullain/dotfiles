@@ -63,6 +63,12 @@ vim.api.nvim_command("autocmd BufWritePre *.lua lua vim.lsp.buf.format(nil, 1000
 vim.api.nvim_command("autocmd BufWritePre *.json lua vim.lsp.buf.format(nil, 1000)")
 vim.api.nvim_command("autocmd BufWritePre *.yaml lua vim.lsp.buf.format(nil, 1000)")
 
+-- test on save for test files (neotest)
+--[[ vim.api.nvim_command("autocmd BufWritePre *.test.js lua require('neotest').run.run(vim.fn.expand('%'))") ]]
+--[[ vim.api.nvim_command("autocmd BufWritePre *.test.jsx lua require('neotest').run.run(vim.fn.expand('%'))") ]]
+--[[ vim.api.nvim_command("autocmd BufWritePre *.test.ts lua require('neotest').run.run(vim.fn.expand('%'))") ]]
+--[[ vim.api.nvim_command("autocmd BufWritePre *.test.tsx lua require('neotest').run.run(vim.fn.expand('%'))") ]]
+
 -- Insert --
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)

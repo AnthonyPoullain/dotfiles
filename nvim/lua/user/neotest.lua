@@ -3,7 +3,7 @@ require("neotest").setup({
 	consumers = {},
 	default_strategy = "integrated",
 	diagnostic = {
-		enabled = true,
+		enabled = false,
 	},
 	discovery = {
 		concurrent = true,
@@ -52,7 +52,7 @@ require("neotest").setup({
 		enabled = true,
 	},
 	output = {
-		enabled = true,
+		enabled = false,
 		open_on_run = "short",
 	},
 	projects = {},

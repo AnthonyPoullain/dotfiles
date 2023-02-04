@@ -9,12 +9,14 @@ yabai -m config window_shadow                off
 yabai -m config window_opacity               off
 yabai -m config window_opacity_duration      0.0
 yabai -m config active_window_opacity        1.0
-yabai -m config normal_window_opacity		 0.9        
+yabai -m config normal_window_opacity				 1.0
 yabai -m config window_border                on
-yabai -m config window_border_width          5
-yabai -m config active_window_border_color   0xff494949
-yabai -m config normal_window_border_color   0xff1b1b19
-yabai -m config insert_feedback_color        0xffd75f5f
+yabai -m config window_border_width          1
+yabai -m config window_border_blur					 off
+# yabai -m config active_window_border_color   0xffB7E8E0
+yabai -m config active_window_border_color   0xffa6e3a1
+yabai -m config normal_window_border_color  0xff302E41 
+yabai -m config insert_feedback_color       0xffB7E8E0 
 yabai -m config split_ratio                  0.50
 yabai -m config auto_balance                 off
 #yabai -m config mouse_modifier              cmd
@@ -24,11 +26,11 @@ yabai -m config mouse_drop_action            swap
 
 # general space settings
 yabai -m config layout                       bsp
-yabai -m config top_padding                  10 #44
+yabai -m config top_padding                  51
 yabai -m config bottom_padding               10
 yabai -m config left_padding                 10
 yabai -m config right_padding                10
-yabai -m config window_gap                   5
+yabai -m config window_gap                   7
 
 yabai -m space 1 --label work
 yabai -m space 2 --label web

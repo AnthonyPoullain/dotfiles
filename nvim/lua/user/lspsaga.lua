@@ -1,99 +1,106 @@
 local keymap = vim.keymap.set
 local saga = require("lspsaga")
 
-saga.init_lsp_saga({
-	move_in_saga = { prev = "<C-k>", next = "<C-j>" },
-	finder_action_keys = {
-		open = "<CR>",
+saga.setup({
+	ui = {
+		-- currently only round theme
+		theme = "round",
+		-- this option only work in neovim 0.9
+		title = true,
+		-- border type can be single,double,rounded,solid,shadow.
+		border = "rounded",
+		winblend = 0,
+		expand = "",
+		collapse = "",
+		preview = " ",
+		code_action = "💡",
+		diagnostic = "🐞",
+		incoming = " ",
+		outgoing = " ",
+		colors = {
+			--float window normal background color
+			normal_bg = "#1d1536",
+			--title background color
+			title_bg = "#afd700",
+			red = "#e95678",
+			magenta = "#b33076",
+			orange = "#FF8700",
+			yellow = "#f7bb3b",
+			green = "#afd700",
+			cyan = "#36d0e0",
+			blue = "#61afef",
+			purple = "#CBA6F7",
+			white = "#d1d4cf",
+			black = "#1c1c19",
+		},
+		kind = {},
 	},
-	definition_action_keys = {
-		edit = "<CR>",
+
+	preview = {
+		lines_above = 0,
+		lines_below = 10,
 	},
-	code_action_lightbulb = {
+	scroll_preview = {
+		scroll_down = "<C-d>",
+		scroll_up = "<C-u>",
+	},
+	request_timeout = 2000,
+
+	lightbulb = {
 		enable = false,
-		enable_in_insert = true,
+		enable_in_insert = false,
 		cache_code_action = true,
 		sign = false,
 		update_time = 150,
 		sign_priority = 20,
 		virtual_text = false,
 	},
-	border_style = "single",
-	--the range of 0 for fully opaque window (disabled) to 100 for fully
-	--transparent background. Values between 0-30 are typically most useful.
-	saga_winblend = 0,
-	-- when cursor in saga window you config these to move
-	-- Error, Warn, Info, Hint
-	-- use emoji like
-	-- { "🙀", "😿", "😾", "😺" }
-	-- or
-	-- { "😡", "😥", "😤", "😐" }
-	-- and diagnostic_header can be a function type
-	-- must return a string and when diagnostic_header
-	-- is function type it will have a param `entry`
-	-- entry is a table type has these filed
-	-- { bufnr, code, col, end_col, end_lnum, lnum, message, severity, source }
-	diagnostic_header = { " ", " ", " ", "ﴞ " },
-	-- preview lines of lsp_finder and definition preview
-	max_preview_lines = 10,
-	-- use emoji lightbulb in default
-	code_action_icon = "💡",
-	-- if true can press number to execute the codeaction in codeaction window
-	code_action_num_shortcut = true,
-	-- same as nvim-lightbulb but async
-	-- finder icons
-	finder_icons = {
-		def = "  ",
-		ref = "諭 ",
-		link = "  ",
+
+	diagnostic = {
+		show_code_action = true,
+		show_source = true,
+		jump_num_shortcut = true,
+		keys = {
+			exec_action = "o",
+			quit = "q",
+			go_action = "g",
+		},
 	},
-	-- finder do lsp request timeout
-	-- if your project big enough or your server very slow
-	-- you may need to increase this value
-	finder_request_timeout = 1500,
-	code_action_keys = {
-		quit = "q",
+
+	rename = {
+		quit = "<C-c>",
 		exec = "<CR>",
+		mark = "x",
+		confirm = "<CR>",
+		in_select = true,
+		whole_project = true,
 	},
-	rename_action_quit = "<C-c>",
-	rename_in_select = true,
-	-- show symbols in winbar must nightly
-	-- in_custom mean use lspsaga api to get symbols
-	-- and set it to your custom winbar or some winbar plugins.
-	-- if in_cusomt = true you must set in_enable to false
-	symbol_in_winbar = {
-		in_custom = true,
-		enable = true,
-		separator = " ",
-		show_file = true,
-		-- define how to customize filename, eg: %:., %
-		-- if not set, use default value `%:t`
-		-- more information see `vim.fn.expand` or `expand`
-		-- ## only valid after set `show_file = true`
-		file_formatter = "",
-		click_support = false,
-	},
-	-- show outline
-	show_outline = {
+
+	outline = {
 		win_position = "right",
-		--set special filetype win that outline window split.like NvimTree neotree
-		-- defx, db_ui
 		win_with = "",
 		win_width = 30,
-		auto_enter = true,
+		show_detail = true,
 		auto_preview = true,
-		virt_text = "┃",
-		jump_key = "o",
-		-- auto refresh when change buffer
 		auto_refresh = true,
+		auto_close = true,
+		custom_sort = nil,
+		keys = {
+			jump = "o",
+			expand_collapse = "u",
+			quit = "q",
+		},
 	},
-	-- custom lsp kind
-	-- usage { Field = 'color code'} or {Field = {your icon, your color code}}
-	custom_kind = {},
-	-- if you don't use nvim-lspconfig you must pass your server name and
-	-- the related filetypes into this table
-	-- like server_filetype_map = { metals = { "sbt", "scala" } }
-	server_filetype_map = {},
+
+	symbol_in_winbar = {
+		enable = true,
+		separator = " ",
+		hide_keyword = true,
+		show_file = true,
+		folder_level = 2,
+		respect_root = false,
+		color_mode = true,
+	},
 })
 
 -- Lsp finder find the symbol definition implement reference
@@ -112,17 +119,17 @@ keymap("n", "gR", "<cmd>Lspsaga rename<CR>", { silent = true })
 -- you can edit the definition file in this flaotwindow
 -- also support open/vsplit/etc operation check definition_action_keys
 -- support tagstack C-t jump back
-keymap("n", "gd", "<cmd>Lspsaga peek_definition<CR>", { silent = true })
+--[[ keymap("n", "gd", "<cmd>Lspsaga peek_definition<CR>", { silent = true }) ]]
 
 -- Show line diagnostics
 keymap("n", "<leader>cd", "<cmd>Lspsaga show_line_diagnostics<CR>", { silent = true })
 
 -- Show cursor diagnostic
-keymap("n", "<leader>cd", "<cmd>Lspsaga show_cursor_diagnostics<CR>", { silent = true })
+--[[ keymap("n", "<leader>cd", "<cmd>Lspsaga show_cursor_diagnostics<CR>", { silent = true }) ]]
 
 -- Diagnsotic jump can use `<c-o>` to jump back
-keymap("n", "[e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { silent = true })
-keymap("n", "]e", "<cmd>Lspsaga diagnostic_jump_next<CR>", { silent = true })
+--[[ keymap("n", "]e", "<cmd>Lspsaga diagnostic_jump_next<CR>", { silent = true }) ]]
+--[[ keymap("n", "[e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { silent = true }) ]]
 
 -- Only jump to error
 keymap("n", "[E", function()
@@ -136,7 +143,7 @@ end, { silent = true })
 --[[ keymap("n", "<leader>o", "<cmd>Lspsaga outline<CR>", { silent = true }) ]]
 
 -- Hover Doc
-keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
+--[[ keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", { silent = true }) ]]
 
 -- Float terminal
 --[[ keymap("n", "<A-d>", "<cmd>Lspsaga open_floaterm<CR>", { silent = true }) ]]

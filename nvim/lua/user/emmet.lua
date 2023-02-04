@@ -2,7 +2,7 @@ local lspconfig = require("lspconfig")
 local configs = require("lspconfig.configs")
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
+capabilities.textDocument.completion.completionItem.snippetSupport = false
 
 if not configs.ls_emmet then
 	configs.ls_emmet = {
@@ -12,8 +12,8 @@ if not configs.ls_emmet then
 				"html",
 				"css",
 				"scss",
-				"javascriptreact",
-				"typescriptreact",
+				--[[ "javascriptreact", ]]
+				--[[ "typescriptreact", ]]
 				"haml",
 				"xml",
 				"xsl",

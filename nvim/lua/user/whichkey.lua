@@ -194,10 +194,15 @@ local mappings = {
 	T = {
 		name = "Tests (Neotest)",
 		t = { "<cmd>lua require('neotest').run.run()<cr>", "Test nearest" },
-		T = { "<cmd>lua require('neotest').run.run()<cr>", "Test file" },
+		T = { "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>", "Test file" },
 		o = { "<cmd>lua require('neotest').output.open()<cr>", "Toggle output preview" },
 		s = { "<cmd>lua require('neotest').summary.toggle()<cr>", "Toggle summary" },
 	},
+	--[[ d = { ]]
+	--[[ 	name = "ChatGPT", ]]
+	--[[ 	a = { "<cmd>ChatGPT<cr>", "Standard prompt" }, ]]
+	--[[ 	e = { "<cmd>ChatGPTEditWithInstructions<cr>", "Edit selected code" }, ]]
+	--[[ }, ]]
 }
 
 which_key.setup(setup)

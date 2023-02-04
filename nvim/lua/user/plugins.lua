@@ -60,6 +60,7 @@ return packer.startup(function(use)
 	use("goolord/alpha-nvim")
 	use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
 	use("folke/which-key.nvim")
+
 	use({
 		"kylechui/nvim-surround",
 		tag = "*", -- Use for stability; omit to use `main` branch for the latest features
@@ -69,6 +70,20 @@ return packer.startup(function(use)
 			})
 		end,
 	})
+	use({
+		"jackMort/ChatGPT.nvim",
+		config = function()
+			require("chatgpt").setup({
+				-- optional configuration
+			})
+		end,
+		requires = {
+			"MunifTanjim/nui.nvim",
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope.nvim",
+		},
+	})
+	--[[ use("barrett-ruth/import-cost.nvim") ]]
 
 	-- Colorschemes
 	use("navarasu/onedark.nvim")
@@ -81,6 +96,7 @@ return packer.startup(function(use)
 		"rose-pine/neovim",
 		as = "rose-pine",
 	})
+	use({ "catppuccin/nvim", as = "catppuccin" })
 	use({
 		"projekt0n/github-nvim-theme",
 		config = function()
@@ -97,6 +113,8 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-cmdline") -- cmdline completions
 	use("saadparwaiz1/cmp_luasnip") -- snippet completions
 	use("hrsh7th/cmp-nvim-lsp")
+	--[[ use("hrsh7th/cmp-nvim-lsp-signature-help") ]]
+	use("hrsh7th/cmp-nvim-lua")
 	use({
 		"folke/trouble.nvim",
 		requires = "kyazdani42/nvim-web-devicons",
@@ -115,7 +133,9 @@ return packer.startup(function(use)
 	})
 
 	-- snippets
-	use("L3MON4D3/LuaSnip") --snippet engine
+	--[[ use("L3MON4D3/LuaSnip") --snippet engine ]]
+	use({ "L3MON4D3/LuaSnip", run = "make install_jsregexp" })
+	--[[ use({ "L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*" }) ]]
 	use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
 
 	-- LSP
@@ -140,7 +160,13 @@ return packer.startup(function(use)
 	use("lewis6991/gitsigns.nvim")
 
 	-- css color
-	use("ap/vim-css-color")
+	use({
+		"norcalli/nvim-colorizer.lua",
+		config = function()
+			require("colorizer").setup()
+		end,
+	})
+	--[[ use("ap/vim-css-color") ]]
 
 	-- tagbar
 	use("preservim/tagbar")
@@ -158,7 +184,7 @@ return packer.startup(function(use)
 		config = function()
 			require("neogen").setup({
 				enabled = true,
-				nippet_engine = "luasnip",
+				snippet_engine = "luasnip",
 			})
 		end,
 		requires = "nvim-treesitter/nvim-treesitter",
@@ -178,31 +204,44 @@ return packer.startup(function(use)
 
 	-- tests
 	use({
-		"nvim-neotest/neotest",
+		"rcarriga/neotest",
 		requires = {
-			"nvim-lua/plenary.nvim",
-			"nvim-treesitter/nvim-treesitter",
-			"antoinemadec/FixCursorHold.nvim",
-			"haydenmeade/neotest-jest",
+			"marilari88/neotest-vitest",
 		},
 		config = function()
 			require("neotest").setup({
 				adapters = {
-					require("neotest-jest")({
-						jestCommand = "npm test --",
-						jestConfigFile = "custom.jest.config.ts",
-						env = { CI = true },
-						cwd = function()
-							return vim.fn.getcwd()
-						end,
-					}),
+					require("neotest-vitest"),
 				},
 			})
 		end,
 	})
-
-	--[[ use("David-Kunz/jester") ]]
-	--[[ use("vim-test/vim-test") ]]
+	--[[ use({ ]]
+	--[[ 	"nvim-neotest/neotest", ]]
+	--[[ 	requires = { ]]
+	--[[ 		"nvim-lua/plenary.nvim", ]]
+	--[[ 		"nvim-treesitter/nvim-treesitter", ]]
+	--[[ 		"antoinemadec/FixCursorHold.nvim", ]]
+	--[[ 		"haydenmeade/neotest-jest", ]]
+	--[[ 	}, ]]
+	--[[ 	config = function() ]]
+	--[[ 		require("neotest").setup({ ]]
+	--[[ 			adapters = { ]]
+	--[[ 				require("neotest-jest")({ ]]
+	--[[ 					jestCommand = "npm test --", ]]
+	--[[ 					jestConfigFile = "custom.jest.config.ts", ]]
+	--[[ 					env = { CI = true }, ]]
+	--[[ 					cwd = function() ]]
+	--[[ 						return vim.fn.getcwd() ]]
+	--[[ 					end, ]]
+	--[[ 				}), ]]
+	--[[ 			}, ]]
+	--[[ 		}) ]]
+	--[[ 	end, ]]
+	--[[ }) ]]
+	--[[]]
+	use("David-Kunz/jester")
+	use("vim-test/vim-test")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

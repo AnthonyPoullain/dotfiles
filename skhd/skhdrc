@@ -2,9 +2,9 @@
 # alt - return : "${HOME}"/.config/yabai/scripts/open_iterm2.sh
 
 #opens alacritty
-# alt - return : open -na /Applications/alacritty.app
+alt - return : open -na /Applications/alacritty.app
 # alt - return : open -na /Applications/WezTerm.app
-alt - return : open -na /Applications/kitty.app
+# alt - return : open -na /Applications/kitty.app
 
 # Show system statistics
 fn + lalt - 1 : "${HOME}"/.config/yabai/scripts/show_cpu.sh
