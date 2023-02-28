@@ -2,6 +2,15 @@
 Wondershare*/
 MobileBackupForeverIni/
 yarn/
+*.tmp.*
 filezilla/
-
+gh/
+hosts.yml
 fish/fish_variables
+CheatEngine/
+neofetch/
+qBittorrent/
+iterm2/
+gtk-2.0/
+temp/
+wezterm/

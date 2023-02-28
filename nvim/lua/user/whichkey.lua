@@ -80,14 +80,17 @@ local opts = {
 
 local mappings = {
 	["a"] = { "<cmd>Alpha<cr>", "Alpha" },
-	-- ["b"] = {
-	--   "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-	--   "Buffers",
-	-- },
+	["d"] = { "<cmd>DogeGenerate<cr>", "Generate docs" },
+	["b"] = {
+		"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+		"Buffers",
+	},
+
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 	["w"] = { "<cmd>w!<CR>", "Save" },
-	["q"] = { "<cmd>q!<CR>", "Quit" },
-	["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
+	["W"] = { "<cmd>noa w!<CR>", "Save without formatting" },
+	--[[ ["q"] = { "<cmd>q!<CR>", "Quit" }, ]]
+	["x"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
 	["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
 	["f"] = {
 		"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
@@ -100,7 +103,7 @@ local mappings = {
 
 	["ta"] = { "<cmd>ToggleAlternate<CR>", "Toggle alternate value" },
 	["ts"] = { "<cmd>Gitsigns toggle_signs<CR>", "Toggle git signs" },
-
+	["q"] = { "<cmd>TroubleToggle document_diagnostics<CR>", "Toggle Trouble" },
 
 	p = {
 		name = "Packer",
@@ -145,7 +148,7 @@ local mappings = {
 			"<cmd>Telescope lsp_workspace_diagnostics<cr>",
 			"Workspace Diagnostics",
 		},
-		f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
+		f = { "<cmd>lua vim.lsp.buf.format()<cr>", "Format" },
 		i = { "<cmd>LspInfo<cr>", "Info" },
 		I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
 		j = {
@@ -187,6 +190,19 @@ local mappings = {
 		h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
 		v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
 	},
+
+	T = {
+		name = "Tests (Neotest)",
+		t = { "<cmd>lua require('neotest').run.run()<cr>", "Test nearest" },
+		T = { "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>", "Test file" },
+		o = { "<cmd>lua require('neotest').output.open()<cr>", "Toggle output preview" },
+		s = { "<cmd>lua require('neotest').summary.toggle()<cr>", "Toggle summary" },
+	},
+	--[[ d = { ]]
+	--[[ 	name = "ChatGPT", ]]
+	--[[ 	a = { "<cmd>ChatGPT<cr>", "Standard prompt" }, ]]
+	--[[ 	e = { "<cmd>ChatGPTEditWithInstructions<cr>", "Edit selected code" }, ]]
+	--[[ }, ]]
 }
 
 which_key.setup(setup)

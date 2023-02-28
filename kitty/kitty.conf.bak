@@ -5,9 +5,11 @@
 
 #: kitty has very powerful font management. You can configure
 #: individual font faces and even specify special fonts for particular
+
 #: characters.
 
-font_family      	 JetBrainsMono Nerd Font Mono Regular
+font_family      Liga SFMono Nerd Font
+# font_family      JetBrains Mono
 # bold_font        Cascadia Code Bold
 # italic_font      Cascadia Code Italic
 # bold_italic_font Cascadia Code Bold Italic
@@ -25,7 +27,7 @@ font_family      	 JetBrainsMono Nerd Font Mono Regular
 #:     italic_font      Operator Mono Book Italic
 #:     bold_italic_font Operator Mono Medium Italic
 
-font_size 13.0
+font_size 12.0
 
 #: Font size (in pts)
 
@@ -48,7 +50,7 @@ force_ltr no
 #: support, because it will force kitty to always treat the text as
 #: LTR, which FriBidi expects for terminals.
 
-adjust_line_height  1 
+adjust_line_height  0
 adjust_column_width 0
 
 #: Change the size of each character cell kitty renders. You can use
@@ -96,7 +98,7 @@ narrow_symbols
 
 #:     narrow_symbols codepoints Optionally the number of cells
 
-disable_ligatures cursor
+disable_ligatures never
 
 #: Choose how you want to handle multi-character ligatures. The
 #: default is to always render them.  You can tell kitty to not render
@@ -210,7 +212,7 @@ cursor_shape block
 #: the cursor shape to beam at shell prompts. You can avoid this by
 #: setting shell_integration to no-cursor.
 
-cursor_beam_thickness 2
+cursor_beam_thickness 1
 
 #: Defines the thickness of the beam cursor (in pts)
 
@@ -218,7 +220,7 @@ cursor_underline_thickness 2.0
 
 #: Defines the thickness of the underline cursor (in pts)
 
-cursor_blink_interval -1
+cursor_blink_interval 0 
 
 #: The interval (in seconds) at which to blink the cursor. Set to zero
 #: to disable blinking. Negative values mean use system default. Note
@@ -703,7 +705,7 @@ single_window_margin_width -1
 #: values set top, horizontal and bottom. Four values set top, right,
 #: bottom and left.
 
-window_padding_width 10 
+window_padding_width 5 
 
 #: The window padding (in pts) (blank area between the text and the
 #: window border). A single value sets all four sides. Two values set
@@ -735,7 +737,7 @@ inactive_text_alpha 1.0
 #: Fade the text in inactive windows by the specified amount (a number
 #: between zero and one, with zero being fully faded).
 
-hide_window_decorations yes
+hide_window_decorations titlebar-only
 
 #: Hide the window decorations (title-bar and window borders) with
 #: yes. On macOS, titlebar-only can be used to only hide the titlebar.
@@ -1004,7 +1006,7 @@ background_tint 0.0
 #: background_opacity is set and transparent windows are supported or
 #: background_image is set.
 
-dim_opacity 0.75
+dim_opacity 1
 
 #: How much to dim text that has the DIM/FAINT attribute set. One
 #: means no dimming and zero means fully dimmed (i.e. invisible).
@@ -1081,7 +1083,7 @@ dim_opacity 0.75
 
 #: Advanced {{{
 
-shell .
+shell fish
 
 #: The shell program to execute. The default value of . means to use
 #: whatever shell is set as the default shell for the current user.
@@ -2057,6 +2059,6 @@ map opt+cmd+,    debug_config
 
 
 # BEGIN_KITTY_THEME
-# Catppuccin
+# Adventure Time
 include current-theme.conf
 # END_KITTY_THEME

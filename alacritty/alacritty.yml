@@ -1,52 +1,35 @@
-colors:
-  # Default colors
-  primary:
-    background: '#282c34'
-    foreground: '#abb2bf'
-
-  # Normal colors
-  normal:
-    # NOTE: Use '#131613' for the `black` color if you'd like to see
-    # black text on the background.
-    black: '#282c34'
-    red: '#e06c75'
-    green: '#98c379'
-    yellow: '#d19a66'
-    blue: '#61afef'
-    magenta: '#c678dd'
-    cyan: '#56b6c2'
-    white: '#abb2bf'
-
-  # Bright colors
-  bright:
-    black: '#5c6370'
-    red: '#e06c75'
-    green: '#98c379'
-    yellow: '#d19a66'
-    blue: '#61afef'
-    magenta: '#c678dd'
-    cyan: '#56b6c2'
-    white: '#ffffff'
+shell:
+  program: /usr/local/bin/fish
+  args:
+    - --login
+import:
+  # uncomment the flavour you want below:
+  # - ~/.config/alacritty/catppuccin/catppuccin-macchiato.yml
+  - ~/.config/alacritty/catppuccin/catppuccin-mocha.yml
+#  - ~/.config/alacritty/catppuccin/catppuccin-frappe.yml
+#  - ~/.config/alacritty/catppuccin/catppuccin-latte.yml
 
 font:
   normal:
-    # family: Cascadia code
-    # family: Ubuntu Mono
-    # style: regular
-    # family: Fira Code iScript
-    family: MesloLGS NF
-    # family: Hack Nerd Font Mono
-    # family: JetBrains Mono Medium
-    # family: Menlo
-    # family: FuraCode Nerd Font Mono
-    # family: UbuntuMono Nerd Font Mono
-    # family: JetBrainsMono Nerd Font Mono
-    # family: CaskaydiaCove Nerd Font Mono
-    # style: Thin
-    # bold:
-    #   style: Bold
-    # #
+    family: VictorMono Nerd Font
   # italic:
+  #   family: VictorMono Nerd Font
+  # family: Cascadia code
+  # family: Ubuntu Mono
+  # style: regular
+  # family: Fira Code iScript
+  # family: MesloLGS NF
+  # family: Hack Nerd Font Mono
+  # family: JetBrains Mono Medium
+  # family: Menlo
+  # family: FuraCode Nerd Font Mono
+  # family: UbuntuMono Nerd Font Mono
+  # family: JetBrainsMono Nerd Font Mono
+  # family: CaskaydiaCove Nerd Font Mono
+  # style: Thin
+  # bold:
+  #   style: Bold
+  # #
   #   family: Cascadia Code
   #   # family: MesloLGS NF
   #   style: Italic
@@ -57,24 +40,23 @@ font:
   #
   size: 12
   offset:
-    y: 0 
+    y: 0
 
 cursor:
   style:
     shape: Block
-    blinking: always
+    blinking: Never
   blink_interval: 500
   unfocused_hollow: true
   thickness: 0.15
 
 window:
-  decorations: none
+  opacity: 1
+  decorations: buttonless
   padding:
-    x: 10
-    y: 10
+    x: 0
+    y: 0
 
-window.opacity: 1
-theme: One-Dark
 
 alt_send_esc: false
 key bindings:
