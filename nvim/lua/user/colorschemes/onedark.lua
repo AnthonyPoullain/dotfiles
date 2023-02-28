@@ -1,6 +1,6 @@
 require("onedark").setup({
 	-- Main options --
-	style = "deep", -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+	style = "darker", -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
 	transparent = false, -- Show/hide background
 	term_colors = true, -- Change terminal color as per the selected theme style
 	ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
@@ -16,14 +16,18 @@ require("onedark").setup({
 	code_style = {
 		comments = "italic",
 		keywords = "bold",
-		functions = "bold",
+		functions = "none",
 		strings = "none",
-		variables = "bold",
+		variables = "none",
 	},
 
 	-- Custom Highlights --
 	colors = {}, -- Override default colors
-	highlights = {}, -- Override highlight groups
+	highlights = {
+		["@keyword"] = { fmt = "bold" },
+		["@keyword.function"] = { fmt = "bold" },
+		["@include"] = { fmt = "bold" },
+	}, -- Override highlight groups
 
 	-- Plugins Config --
 	diagnostics = {

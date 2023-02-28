@@ -4,5 +4,7 @@ MobileBackupForeverIni/
 yarn/
 *.tmp.*
 filezilla/
+gh/
+hosts.yml
 
 fish/fish_variables

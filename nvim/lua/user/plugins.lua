@@ -56,7 +56,7 @@ return packer.startup(function(use)
 	use("akinsho/toggleterm.nvim")
 	use("ahmedkhalf/project.nvim")
 	use("lewis6991/impatient.nvim")
-	-- use "lukas-reineke/indent-blankline.nvim"
+	--[[ use("lukas-reineke/indent-blankline.nvim") ]]
 	use("goolord/alpha-nvim")
 	use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
 	use("folke/which-key.nvim")
@@ -131,6 +131,7 @@ return packer.startup(function(use)
 		"glepnir/lspsaga.nvim",
 		branch = "main",
 	})
+	use("Shatur/neovim-ayu")
 
 	-- snippets
 	--[[ use("L3MON4D3/LuaSnip") --snippet engine ]]
@@ -153,6 +154,7 @@ return packer.startup(function(use)
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
 	})
+	use("nvim-treesitter/playground")
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 	--[[ use("nvim-treesitter/nvim-tree-docs") ]]
 
@@ -216,32 +218,17 @@ return packer.startup(function(use)
 			})
 		end,
 	})
-	--[[ use({ ]]
-	--[[ 	"nvim-neotest/neotest", ]]
-	--[[ 	requires = { ]]
-	--[[ 		"nvim-lua/plenary.nvim", ]]
-	--[[ 		"nvim-treesitter/nvim-treesitter", ]]
-	--[[ 		"antoinemadec/FixCursorHold.nvim", ]]
-	--[[ 		"haydenmeade/neotest-jest", ]]
-	--[[ 	}, ]]
-	--[[ 	config = function() ]]
-	--[[ 		require("neotest").setup({ ]]
-	--[[ 			adapters = { ]]
-	--[[ 				require("neotest-jest")({ ]]
-	--[[ 					jestCommand = "npm test --", ]]
-	--[[ 					jestConfigFile = "custom.jest.config.ts", ]]
-	--[[ 					env = { CI = true }, ]]
-	--[[ 					cwd = function() ]]
-	--[[ 						return vim.fn.getcwd() ]]
-	--[[ 					end, ]]
-	--[[ 				}), ]]
-	--[[ 			}, ]]
-	--[[ 		}) ]]
-	--[[ 	end, ]]
-	--[[ }) ]]
-	--[[]]
 	use("David-Kunz/jester")
 	use("vim-test/vim-test")
+
+	-- refactoring
+	use({
+		"ThePrimeagen/refactoring.nvim",
+		requires = {
+			{ "nvim-lua/plenary.nvim" },
+			{ "nvim-treesitter/nvim-treesitter" },
+		},
+	})
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
