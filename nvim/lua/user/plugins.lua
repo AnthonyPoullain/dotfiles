@@ -84,8 +84,8 @@ return packer.startup(function(use)
 		},
 	})
 	--[[ use("barrett-ruth/import-cost.nvim") ]]
-
 	-- Colorschemes
+	use("folke/tokyonight.nvim")
 	use("navarasu/onedark.nvim")
 	use("EdenEast/nightfox.nvim")
 	use("marko-cerovac/material.nvim")
@@ -145,7 +145,6 @@ return packer.startup(function(use)
 	use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
 	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
 	--[[ use({ "williamboman/mason.nvim" }) ]]
-
 	-- Telescope
 	use("nvim-telescope/telescope.nvim")
 
@@ -157,7 +156,6 @@ return packer.startup(function(use)
 	use("nvim-treesitter/playground")
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 	--[[ use("nvim-treesitter/nvim-tree-docs") ]]
-
 	-- Git
 	use("lewis6991/gitsigns.nvim")
 
@@ -169,7 +167,6 @@ return packer.startup(function(use)
 		end,
 	})
 	--[[ use("ap/vim-css-color") ]]
-
 	-- tagbar
 	use("preservim/tagbar")
 
