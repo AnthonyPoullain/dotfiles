@@ -54,7 +54,7 @@ cmp.setup({
 	mapping = {
 		["<C-k>"] = cmp.mapping.select_prev_item(),
 		["<C-j>"] = cmp.mapping.select_next_item(),
-		["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs( -1), { "i", "c" }),
+		["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
 		["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
 		["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
 		["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
@@ -84,8 +84,8 @@ cmp.setup({
 		["<S-Tab>"] = cmp.mapping(function(fallback)
 			-- if cmp.visible() then
 			-- cmp.select_prev_item()
-			if luasnip.jumpable( -1) then
-				luasnip.jump( -1)
+			if luasnip.jumpable(-1) then
+				luasnip.jump(-1)
 			else
 				fallback()
 			end
@@ -106,18 +106,18 @@ cmp.setup({
 			--[[ 	nvim_lsp = "[LSP]", ]]
 			--[[ 	luasnip = "[Snippet]", ]]
 			--[[ 	buffer = "[Buffer]", ]]
-			--[[ 	path = "[Path]", ]]
+			--[[ path = "[Path]", ]]
 			--[[ })[entry.source.name] ]]
 			vim_item.menu = ({
-						nvim_lsp = "",
-						nvim_lua = "",
-						treesitter = "",
-						path = "",
-						buffer = "",
-						zsh = "",
-						luasnip = "",
-						spell = "暈",
-					})[entry.source.name]
+				nvim_lsp = "",
+				nvim_lua = "",
+				treesitter = "",
+				path = "",
+				buffer = "",
+				zsh = "",
+				luasnip = "",
+				spell = "暈",
+			})[entry.source.name]
 
 			return vim_item
 		end,
@@ -128,7 +128,7 @@ cmp.setup({
 		--[[ { name = "treesitter" }, ]]
 		{ name = "luasnip" },
 		{ name = "path" },
-		{ name = "buffer",                 keyword_length = 3 },
+		{ name = "buffer", keyword_length = 3 },
 	},
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
