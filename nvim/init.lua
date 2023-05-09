@@ -4,13 +4,12 @@ require("user.plugins")
 require("user.colorscheme")
 require("user.cmp")
 require("user.lsp")
-require("user.dap")
---[[ require("user.emmet") ]]
 require("user.neotest")
---[[ require("user.luasnip") ]]
+require("user.luasnip")
 require("user.telescope")
 require("user.treesitter")
---[[ require("user.autopairs") ]]
+require("user.autopairs")
+--[[ require("user.lspsaga") ]]
 require("user.comment")
 require("user.gitsigns")
 require("user.nvim-tree")

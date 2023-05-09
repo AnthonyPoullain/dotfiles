@@ -14,9 +14,7 @@ M.setup = function()
 	end
 
 	local config = {
-		-- disable virtual text
 		virtual_text = true,
-		-- show signs
 		signs = {
 			active = signs,
 		},
@@ -29,8 +27,6 @@ M.setup = function()
 			border = "rounded",
 			source = "always",
 			code = "always",
-			header = "",
-			prefix = "",
 		},
 	}
 
@@ -46,7 +42,6 @@ M.setup = function()
 end
 
 local function lsp_highlight_document(client)
-	-- Set autocommands conditional on server_capabilities
 	if client.server_capabilities.document_highlight then
 		vim.api.nvim_exec(
 			[[
@@ -89,12 +84,31 @@ M.on_attach = function(client, bufnr)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-
 local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not status_ok then
 	return
 end
 
 M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
+
+require("mason-lspconfig").setup_handlers({
+	-- The first entry (without a key) will be the default handler
+	-- and will be called for each installed server that doesn't have
+	-- a dedicated handler.
+	function(server_name) -- default handler (optional)
+		require("lspconfig")[server_name].setup({})
+	end,
+	-- Next, you can provide targeted overrides for specific servers.
+	["tsserver"] = function()
+		require("lspconfig")["tsserver"].setup({
+			settings = {
+				javascript = {
+					format = { enable = false },
+					--[[ preferGoToSourceDefinition = true, ]]
+				},
+			},
+		})
+	end,
+})
 
 return M

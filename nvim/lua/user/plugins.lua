@@ -13,7 +13,6 @@ vim.opt.rtp:prepend(lazypath)
 
 local opts = {}
 local plugins = {
-
 	"christoomey/vim-tmux-navigator",
 	"b0o/schemastore.nvim",
 	"wbthomason/packer.nvim",
@@ -22,7 +21,10 @@ local plugins = {
 	"numToStr/Comment.nvim",
 	"kyazdani42/nvim-web-devicons",
 	"kyazdani42/nvim-tree.lua",
-	"akinsho/bufferline.nvim",
+	{
+		"akinsho/bufferline.nvim",
+		version = "v3.*",
+	},
 	"moll/vim-bbye",
 	"nvim-lualine/lualine.nvim",
 	"akinsho/toggleterm.nvim",
@@ -30,9 +32,27 @@ local plugins = {
 	"goolord/alpha-nvim",
 	"antoinemadec/FixCursorHold.nvim",
 	"folke/which-key.nvim",
-	{ "kylechui/nvim-surround" },
+	{
+		"kylechui/nvim-surround",
+		version = "*", -- Use for stability; omit to use `main` branch for the latest features
+		event = "VeryLazy",
+		config = function()
+			require("nvim-surround").setup({
+				-- Configuration here, or leave empty to use defaults
+			})
+		end,
+	},
+	"jose-elias-alvarez/null-ls.nvim",
 	{
 		"jackMort/ChatGPT.nvim",
+		event = "VeryLazy",
+		config = function()
+			require("chatgpt").setup({
+				keymaps = {
+					submit = "<C-s>",
+				},
+			})
+		end,
 		dependencies = {
 			"MunifTanjim/nui.nvim",
 			"nvim-lua/plenary.nvim",
@@ -40,17 +60,26 @@ local plugins = {
 		},
 	},
 	"folke/tokyonight.nvim",
-	"navarasu/onedark.nvim",
-	"EdenEast/nightfox.nvim",
-	"marko-cerovac/material.nvim",
-	"morhetz/gruvbox",
+	"frenzyexists/aquarium-vim",
+	--[[ "navarasu/onedark.nvim", ]]
+	--[[ "EdenEast/nightfox.nvim", ]]
+	--[[ "marko-cerovac/material.nvim", ]]
+	--[[ "morhetz/gruvbox", ]]
 	"nyoom-engineering/oxocarbon.nvim",
-	{ "catppuccin/nvim", name = "catppuccin" },
-	"Shatur/neovim-ayu",
-	"projekt0n/github-nvim-theme",
+	"rebelot/kanagawa.nvim",
+	--[[ { "catppuccin/nvim", name = "catppuccin" }, ]]
+	--[[ "Shatur/neovim-ayu", ]]
+	--[[ "projekt0n/github-nvim-theme", ]]
+	{ "decaycs/decay.nvim", as = "decay" },
+	"lunarvim/horizon.nvim",
+	{
+		"hardhackerlabs/theme-vim",
+		--[[ config = function() ]]
+		--[[   vim.cmd.colorscheme 'hardhacker' ]]
+		--[[ end, ]]
+	},
 	{ "folke/trouble.nvim", dependencies = "kyazdani42/nvim-web-devicons" },
 	"styled-components/vim-styled-components",
-
 	--LSP Zero
 	{
 		"VonHeikemen/lsp-zero.nvim",
@@ -74,10 +103,19 @@ local plugins = {
 			{ "rafamadriz/friendly-snippets" }, -- Optional
 		},
 	},
-
+	-- LSP Saga
+	"glepnir/lspsaga.nvim",
+	event = "BufRead",
+	config = function()
+		require("lspsaga").setup({})
+	end,
+	dependencies = {
+		{ "nvim-tree/nvim-web-devicons" },
+		--Please make sure you install markdown and markdown_inline parser
+		{ "nvim-treesitter/nvim-treesitter" },
+	},
 	-- Telescope
 	"nvim-telescope/telescope.nvim",
-
 	-- Treesitter
 	{
 		"nvim-treesitter/nvim-treesitter",
@@ -85,10 +123,8 @@ local plugins = {
 	},
 	"nvim-treesitter/playground",
 	"JoosepAlviste/nvim-ts-context-commentstring",
-
 	-- Git
 	"lewis6991/gitsigns.nvim",
-
 	-- css color
 	{
 		"norcalli/nvim-colorizer.lua",
@@ -96,31 +132,25 @@ local plugins = {
 			require("colorizer").setup()
 		end,
 	},
-
 	-- Boolean toggler
 	"rmagatti/alternate-toggler",
-
 	-- JSDocs
 	{ "heavenshell/vim-jsdoc", build = "make install" },
-	{
-		"danymat/neogen",
-		config = function()
-			require("neogen").setup({
-				enabled = true,
-				snippet_engine = "luasnip",
-			})
-		end,
-		dependencies = "nvim-treesitter/nvim-treesitter",
-		-- Uncomment next line if you want to follow only stable versions
-		tag = "*",
-	},
-
+	--[[ { ]]
+	--[[ 	"danymat/neogen", ]]
+	--[[ 	config = function() ]]
+	--[[ 		require("neogen").setup({ ]]
+	--[[ 			enabled = true, ]]
+	--[[ 			snippet_engine = "luasnip", ]]
+	--[[ 		}) ]]
+	--[[ 	end, ]]
+	--[[ 	dependencies = "nvim-treesitter/nvim-treesitter", ]]
+	--[[ }, ]]
 	-- debug
 	"mfussenegger/nvim-dap",
 	"rcarriga/nvim-dap-ui",
 	"theHamsta/nvim-dap-virtual-text",
 	"nvim-telescope/telescope-dap.nvim",
-
 	-- tests
 	{
 		"rcarriga/neotest",
@@ -136,7 +166,6 @@ local plugins = {
 		end,
 	},
 	"David-Kunz/jester",
-
 	-- Lua
 	{
 		"folke/todo-comments.nvim",

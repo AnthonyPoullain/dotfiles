@@ -1,8 +1,6 @@
-require("user.colorschemes.onedark")
-require("user.colorschemes.oxocarbon")
-require("user.colorschemes.catppuccin")
-require("user.colorschemes.ayu")
-require("user.colorschemes.tokyonight")
---[[ vim.cmd("colorscheme oxocarbon") ]]
---[[ vim.cmd.colorscheme("catppuccin") ]]
-vim.cmd([[colorscheme tokyonight]])
+require("oxocarbon")
+require("tokyonight")
+require("decay")
+
+--[[ vim.cmd.colorscheme("kanagawa") ]]
+vim.cmd.colorscheme("hardhacker")

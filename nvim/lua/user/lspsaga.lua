@@ -35,7 +35,6 @@ saga.setup({
 		},
 		kind = {},
 	},
-
 	preview = {
 		lines_above = 0,
 		lines_below = 10,
@@ -45,7 +44,6 @@ saga.setup({
 		scroll_up = "<C-u>",
 	},
 	request_timeout = 2000,
-
 	lightbulb = {
 		enable = false,
 		enable_in_insert = false,
@@ -55,10 +53,10 @@ saga.setup({
 		sign_priority = 20,
 		virtual_text = false,
 	},
-
 	diagnostic = {
-		show_code_action = true,
-		show_source = true,
+		on_insert = false,
+		show_code_action = false,
+		show_source = false,
 		jump_num_shortcut = true,
 		keys = {
 			exec_action = "o",
@@ -66,7 +64,6 @@ saga.setup({
 			go_action = "g",
 		},
 	},
-
 	rename = {
 		quit = "<C-c>",
 		exec = "<CR>",
@@ -75,7 +72,6 @@ saga.setup({
 		in_select = true,
 		whole_project = true,
 	},
-
 	outline = {
 		win_position = "right",
 		win_with = "",
@@ -91,7 +87,6 @@ saga.setup({
 			quit = "q",
 		},
 	},
-
 	symbol_in_winbar = {
 		enable = false,
 		separator = " ",
@@ -119,18 +114,15 @@ keymap("n", "gR", "<cmd>Lspsaga rename<CR>", { silent = true })
 -- you can edit the definition file in this flaotwindow
 -- also support open/vsplit/etc operation check definition_action_keys
 -- support tagstack C-t jump back
---[[ keymap("n", "gd", "<cmd>Lspsaga peek_definition<CR>", { silent = true }) ]]
-
+keymap("n", "gd", "<cmd>Lspsaga show_definition<CR>", { silent = true })
 -- Show line diagnostics
 keymap("n", "<leader>cd", "<cmd>Lspsaga show_line_diagnostics<CR>", { silent = true })
 
 -- Show cursor diagnostic
 --[[ keymap("n", "<leader>cd", "<cmd>Lspsaga show_cursor_diagnostics<CR>", { silent = true }) ]]
-
 -- Diagnsotic jump can use `<c-o>` to jump back
 --[[ keymap("n", "]e", "<cmd>Lspsaga diagnostic_jump_next<CR>", { silent = true }) ]]
 --[[ keymap("n", "[e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { silent = true }) ]]
-
 -- Only jump to error
 keymap("n", "[E", function()
 	require("lspsaga.diagnostic").goto_prev({ severity = vim.diagnostic.severity.ERROR })
@@ -141,10 +133,8 @@ end, { silent = true })
 
 -- Outline
 --[[ keymap("n", "<leader>o", "<cmd>Lspsaga outline<CR>", { silent = true }) ]]
-
 -- Hover Doc
 --[[ keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", { silent = true }) ]]
-
 -- Float terminal
 --[[ keymap("n", "<A-d>", "<cmd>Lspsaga open_floaterm<CR>", { silent = true }) ]]
 -- if you want pass somc cli command into terminal you can do like this
