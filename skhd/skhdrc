@@ -2,16 +2,10 @@
 # alt - return : "${HOME}"/.config/yabai/scripts/open_iterm2.sh
 
 #opens alacritty
-alt - return : open -na /Applications/alacritty.app
+alt - return : open -na /Applications/kitty.app
+# alt - return : open -na /Applications/iTerm.app
 # alt - return : open -na /Applications/WezTerm.app
 # alt - return : open -na /Applications/kitty.app
-
-# Show system statistics
-fn + lalt - 1 : "${HOME}"/.config/yabai/scripts/show_cpu.sh
-fn + lalt - 2 : "${HOME}"/.config/yabai/scripts/show_mem.sh
-fn + lalt - 3 : "${HOME}"/.config/yabai/scripts/show_bat.sh
-fn + lalt - 4 : "${HOME}"/.config/yabai/scripts/show_disk.sh
-fn + lalt - 5 : "${HOME}"/.config/yabai/scripts/show_song.sh
 
 # Navigation
 alt - h : yabai -m window --focus west
@@ -87,7 +81,8 @@ shift + alt - space : \
 
 # Restart Yabai
 shift + lctrl + alt - r : \
-		brew services restart yabai
+		yabai --restart-service
+		# brew services restart yabai
     # /usr/bin/env osascript <<< \
     #     "display notification \"Restarting Yabai\" with title \"Yabai\""; \
     # launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"

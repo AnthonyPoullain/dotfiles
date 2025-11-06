@@ -73,7 +73,7 @@ colors: *tokyo-night
 
 font:
   normal:
-    # family: VictorMono Nerd Font 
+    family: VictorMono Nerd Font 
       # family: Cascadia code
       # family: Ubuntu Mono
   # style: regular
@@ -82,15 +82,15 @@ font:
       # family: Hack Nerd Font Mono
       # family: JetBrains Mono Medium
       # family: Menlo
-      family: FuraCode Nerd Font Mono
+      # family: FuraCode Nerd Font Mono
       # family: UbuntuMono Nerd Font Mono
       # family: JetBrainsMono Nerd Font Mono
       # family: CaskaydiaCove Nerd Font Mono
   italic:
     family: VictorMono Nerd Font
   # style: Thin
-  bold:
-    style: Medium
+  # bold:
+  #   style: Medium
   # #
   #   family: Cascadia Code
   #   # family: MesloLGS NF
@@ -117,11 +117,12 @@ window:
   opacity: 1
   decorations: buttonless
   padding:
-    x: 0
-    y: 0
+    x: 2
+    y: 2
 
 
-alt_send_esc: false
+# alt_send_esc: false
+
 key bindings:
   - { key: Equals, mods: Command, action: DecreaseFontSize }
   - { key: Slash, mods: Command, action: IncreaseFontSize }

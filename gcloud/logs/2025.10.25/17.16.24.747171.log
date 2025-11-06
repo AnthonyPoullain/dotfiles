@@ -1,0 +1,9 @@
+2025-10-25 17:16:24,765 DEBUG    root            Loaded Command Group: ['gcloud', 'projects']
+2025-10-25 17:16:24,770 DEBUG    root            Loaded Command Group: ['gcloud', 'projects', 'describe']
+2025-10-25 17:16:24,772 DEBUG    root            Running [gcloud.projects.describe] with arguments: [--account: "antho.poullain@gmail.com", --configuration: "default", --format: "value(name)", PROJECT_ID_OR_NUMBER: "stalwart-city-473314-p8"]
+2025-10-25 17:16:24,804 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): cloudresourcemanager.googleapis.com:443
+2025-10-25 17:16:26,506 DEBUG    urllib3.connectionpool https://cloudresourcemanager.googleapis.com:443 "GET /v1/projects/stalwart-city-473314-p8?alt=json HTTP/11" 200 None
+2025-10-25 17:16:26,508 DEBUG    root            Chosen display Format:default value(name)
+2025-10-25 17:16:26,509 INFO     root            Display format: "default value(name)"
+2025-10-25 17:16:26,547 INFO     ___FILE_ONLY___ My First Project
+

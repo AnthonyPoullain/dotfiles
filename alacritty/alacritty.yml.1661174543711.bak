@@ -73,7 +73,8 @@ window:
 window.opacity: 1
 theme: Material-Theme
 
-alt_send_esc: false
+window.option_as_alt: false
+
 key bindings:
   - { key: Equals, mods: Command, action: DecreaseFontSize }
   - { key: Slash, mods: Command, action: IncreaseFontSize }

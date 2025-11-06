@@ -1,0 +1,180 @@
+[["key bindings"]]
+action = "DecreaseFontSize"
+key = "Equals"
+mods = "Command"
+
+[["key bindings"]]
+action = "IncreaseFontSize"
+key = "Slash"
+mods = "Command"
+
+[["key bindings"]]
+action = "Quit"
+key = "A"
+mods = "Command"
+
+[["key bindings"]]
+action = "Quit"
+key = "Z"
+mods = "Command"
+
+[["key bindings"]]
+chars = "|"
+key = "L"
+mods = "Alt|Shift"
+
+[["key bindings"]]
+chars = "{"
+key = "Key5"
+mods = "Alt"
+
+[["key bindings"]]
+chars = "}"
+key = "Minus"
+mods = "Alt"
+
+[["key bindings"]]
+chars = "["
+key = "Key5"
+mods = "Alt|Shift"
+
+[["key bindings"]]
+chars = "]"
+key = "Minus"
+mods = "Alt|Shift"
+
+[["key bindings"]]
+chars = "~"
+key = "N"
+mods = "Alt"
+
+[["key bindings"]]
+chars = '\'
+key = "Period"
+mods = "Alt|Shift"
+
+[["key bindings"]]
+chars = "\u001Bj"
+key = "J"
+mods = "Alt"
+
+[["key bindings"]]
+chars = "\u001Bk"
+key = "K"
+mods = "Alt"
+
+[["key bindings"]]
+chars = "\u001Bh"
+key = "H"
+mods = "Alt"
+
+[["key bindings"]]
+chars = "\u001Bl"
+key = "L"
+mods = "Alt"
+
+[colors.bright]
+black = "#444b6a"
+blue = "#7da6ff"
+cyan = "#0db9d7"
+green = "#b9f27c"
+magenta = "#bb9af7"
+red = "#ff7a93"
+white = "#acb0d0"
+yellow = "#ff9e64"
+
+[colors.normal]
+black = "#32344a"
+blue = "#7aa2f7"
+cyan = "#449dab"
+green = "#9ece6a"
+magenta = "#ad8ee6"
+red = "#f7768e"
+white = "#787c99"
+yellow = "#e0af68"
+
+[colors.primary]
+background = "#1a1b26"
+foreground = "#a9b1d6"
+
+[cursor]
+blink_interval = 500
+thickness = 0.15
+unfocused_hollow = true
+
+[cursor.style]
+blinking = "Never"
+shape = "Block"
+
+[font]
+size = 13
+
+[font.italic]
+family = "VictorMono Nerd Font"
+
+[font.normal]
+family = "VictorMono Nerd Font"
+
+[font.offset]
+x = -1
+y = 0
+
+[schemes.tokyo-night.bright]
+black = "#444b6a"
+blue = "#7da6ff"
+cyan = "#0db9d7"
+green = "#b9f27c"
+magenta = "#bb9af7"
+red = "#ff7a93"
+white = "#acb0d0"
+yellow = "#ff9e64"
+
+[schemes.tokyo-night.normal]
+black = "#32344a"
+blue = "#7aa2f7"
+cyan = "#449dab"
+green = "#9ece6a"
+magenta = "#ad8ee6"
+red = "#f7768e"
+white = "#787c99"
+yellow = "#e0af68"
+
+[schemes.tokyo-night.primary]
+background = "#1a1b26"
+foreground = "#a9b1d6"
+
+[schemes.tokyo-night-storm.bright]
+black = "#444b6a"
+blue = "#7da6ff"
+cyan = "#0db9d7"
+green = "#b9f27c"
+magenta = "#bb9af7"
+red = "#ff7a93"
+white = "#acb0d0"
+yellow = "#ff9e64"
+
+[schemes.tokyo-night-storm.normal]
+black = "#32344a"
+blue = "#7aa2f7"
+cyan = "#449dab"
+green = "#9ece6a"
+magenta = "#ad8ee6"
+red = "#f7768e"
+white = "#9699a8"
+yellow = "#e0af68"
+
+[schemes.tokyo-night-storm.primary]
+background = "#24283b"
+foreground = "#a9b1d6"
+
+[shell]
+args = ["--login"]
+program = "/usr/local/bin/fish"
+
+[window]
+decorations = "buttonless"
+opacity = 1
+
+[window.padding]
+x = 2
+y = 2

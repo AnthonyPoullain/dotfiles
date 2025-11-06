@@ -1,0 +1,15 @@
+2025-10-21 17:01:00,684 DEBUG    root            Loaded Command Group: ['gcloud', 'projects']
+2025-10-21 17:01:00,694 DEBUG    root            Loaded Command Group: ['gcloud', 'projects', 'describe']
+2025-10-21 17:01:00,696 DEBUG    root            Running [gcloud.projects.describe] with arguments: [--account: "antho.poullain@gmail.com", --configuration: "default", --format: "value(name)", PROJECT_ID_OR_NUMBER: "stalwart-city-473314-p8"]
+2025-10-21 17:01:00,887 DEBUG    google.auth.transport.requests Making request: POST https://oauth2.googleapis.com/token
+2025-10-21 17:01:00,896 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-10-21 17:01:01,266 DEBUG    urllib3.connectionpool https://oauth2.googleapis.com:443 "POST /token HTTP/11" 200 None
+2025-10-21 17:01:01,280 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): cloudresourcemanager.googleapis.com:443
+2025-10-21 17:01:02,764 DEBUG    urllib3.connectionpool https://cloudresourcemanager.googleapis.com:443 "GET /v1/projects/stalwart-city-473314-p8?alt=json HTTP/11" 200 None
+2025-10-21 17:01:02,772 DEBUG    root            Chosen display Format:default value(name)
+2025-10-21 17:01:02,772 INFO     root            Display format: "default value(name)"
+2025-10-21 17:01:02,837 INFO     ___FILE_ONLY___ My First Project
+
+2025-10-21 17:01:02,853 DEBUG    root            Checking for updates...
+2025-10-21 17:01:02,856 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): dl.google.com:443
+2025-10-21 17:01:03,108 DEBUG    urllib3.connectionpool https://dl.google.com:443 "GET /dl/cloudsdk/channels/rapid/components-2.json HTTP/11" 200 233157

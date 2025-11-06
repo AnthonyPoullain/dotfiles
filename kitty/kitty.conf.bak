@@ -11,7 +11,9 @@
 # font_family      Heptal 
 # font_family      MonoLisa
 # font_family      Liga SFMono Nerd Font
-font_family      VictorMono Nerd Font
+font_family      FantasqueSansM Nerd Font 
+font_family      MesloLGS NF
+# font_family      VictorMono Nerd Font
 # font_family      Operator Mono Book
 # font_family      FuraCode Nerd Font Mono
 # font_family      UnbuntuMono Nerd Font
@@ -35,7 +37,7 @@ font_family      VictorMono Nerd Font
 #:     italic_font      Operator Mono Book Italic
 #:     bold_italic_font Operator Mono Medium Italic
 
-font_size 12.0
+font_size 14.0
 
 #: Font size (in pts)
 
@@ -842,7 +844,7 @@ tab_bar_margin_height 0.0 0.0
 #: the second number is the margin between the tab bar and the
 #: contents of the current tab.
 
-tab_bar_style powerline
+tab_bar_style hidden
 
 #: The tab bar style, can be one of:
 
@@ -965,7 +967,7 @@ inactive_tab_font_style normal
 
 #: The foreground and background colors
 
-background_opacity 1
+background_opacity .9
 
 #: The opacity of the background. A number between 0 and 1, where 1 is
 #: opaque and 0 is fully transparent.  This will only work if
@@ -2069,6 +2071,6 @@ map opt+cmd+,    debug_config
 
 
 # BEGIN_KITTY_THEME
-# Toy Chest
+# One Dark
 include current-theme.conf
 # END_KITTY_THEME
